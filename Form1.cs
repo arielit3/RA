@@ -1,8 +1,8 @@
 namespace RepromosRA
 {
-    public partial class Form1 : Form
+    public partial class fm_inicio : Form
     {
-        public Form1()
+        public fm_inicio()
         {
             InitializeComponent();
         }
