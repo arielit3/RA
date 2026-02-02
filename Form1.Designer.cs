@@ -40,7 +40,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("MS Reference Sans Serif", 32F, FontStyle.Bold);
-            label1.Location = new Point(192, 9);
+            label1.Location = new Point(195, 9);
             label1.Name = "label1";
             label1.Size = new Size(398, 67);
             label1.TabIndex = 0;
@@ -49,10 +49,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("MS Reference Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(126, 76);
+            label2.Font = new Font("MS Reference Sans Serif", 11.8F, FontStyle.Bold);
+            label2.Location = new Point(150, 76);
             label2.Name = "label2";
-            label2.Size = new Size(547, 28);
+            label2.Size = new Size(481, 26);
             label2.TabIndex = 1;
             label2.Text = "Gestiona paquetes, proveedores y clientes";
             // 
@@ -71,6 +71,7 @@
             btn_fmpaquetes.TabIndex = 1;
             btn_fmpaquetes.Text = "Seccion de Paquetes";
             btn_fmpaquetes.UseVisualStyleBackColor = false;
+            btn_fmpaquetes.Click += btn_fmpaquetes_Click;
             // 
             // btn_fmproveedores
             // 
@@ -119,11 +120,13 @@
             btn_salir.TabIndex = 4;
             btn_salir.Text = "Cerrar";
             btn_salir.UseVisualStyleBackColor = false;
+            btn_salir.Click += btn_salir_Click;
             // 
             // fm_inicio
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
             Controls.Add(btn_salir);
             Controls.Add(btn_fmclientes);

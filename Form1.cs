@@ -11,5 +11,16 @@ namespace RepromosRA
         {
 
         }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_fmpaquetes_Click(object sender, EventArgs e)
+        {
+            fm_SPaquetes seccionPaquetes = new fm_SPaquetes();
+            seccionPaquetes.ShowDialog();
+        }
     }
 }
