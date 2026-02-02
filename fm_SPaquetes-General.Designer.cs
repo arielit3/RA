@@ -47,7 +47,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("MS Reference Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(162, 76);
+            label2.Location = new Point(230, 76);
             label2.Name = "label2";
             label2.Size = new Size(585, 28);
             label2.TabIndex = 9;
@@ -57,7 +57,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("MS Reference Sans Serif", 32F, FontStyle.Bold);
-            label1.Location = new Point(260, 9);
+            label1.Location = new Point(328, 9);
             label1.Name = "label1";
             label1.Size = new Size(398, 67);
             label1.TabIndex = 8;
@@ -71,7 +71,7 @@
             btn_regresar.FlatAppearance.BorderColor = Color.DarkRed;
             btn_regresar.FlatStyle = FlatStyle.Flat;
             btn_regresar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic);
-            btn_regresar.Location = new Point(9, 517);
+            btn_regresar.Location = new Point(5, 622);
             btn_regresar.Margin = new Padding(0);
             btn_regresar.Name = "btn_regresar";
             btn_regresar.Size = new Size(108, 40);
@@ -88,7 +88,7 @@
             dgview_paquetes.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
             dgview_paquetes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgview_paquetes.GridColor = SystemColors.Info;
-            dgview_paquetes.Location = new Point(48, 229);
+            dgview_paquetes.Location = new Point(116, 229);
             dgview_paquetes.Name = "dgview_paquetes";
             dgview_paquetes.RowHeadersWidth = 51;
             dgview_paquetes.Size = new Size(825, 248);
@@ -99,7 +99,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("MS Reference Sans Serif", 10.8F, FontStyle.Bold);
-            label3.Location = new Point(283, 118);
+            label3.Location = new Point(351, 118);
             label3.Name = "label3";
             label3.Size = new Size(139, 23);
             label3.TabIndex = 12;
@@ -109,7 +109,7 @@
             // 
             tbox_filtroID.BorderStyle = BorderStyle.None;
             tbox_filtroID.Cursor = Cursors.IBeam;
-            tbox_filtroID.Location = new Point(428, 118);
+            tbox_filtroID.Location = new Point(496, 118);
             tbox_filtroID.Name = "tbox_filtroID";
             tbox_filtroID.PlaceholderText = "Ingresa id";
             tbox_filtroID.Size = new Size(125, 20);
@@ -125,7 +125,7 @@
             btn_filtroRecibidos.FlatAppearance.BorderColor = Color.Tan;
             btn_filtroRecibidos.FlatStyle = FlatStyle.Flat;
             btn_filtroRecibidos.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic);
-            btn_filtroRecibidos.Location = new Point(63, 161);
+            btn_filtroRecibidos.Location = new Point(131, 161);
             btn_filtroRecibidos.Margin = new Padding(0);
             btn_filtroRecibidos.Name = "btn_filtroRecibidos";
             btn_filtroRecibidos.Size = new Size(173, 51);
@@ -142,7 +142,7 @@
             btn_filtroEnviados.FlatAppearance.BorderColor = Color.Tan;
             btn_filtroEnviados.FlatStyle = FlatStyle.Flat;
             btn_filtroEnviados.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic);
-            btn_filtroEnviados.Location = new Point(451, 161);
+            btn_filtroEnviados.Location = new Point(519, 161);
             btn_filtroEnviados.Margin = new Padding(0);
             btn_filtroEnviados.Name = "btn_filtroEnviados";
             btn_filtroEnviados.Size = new Size(173, 51);
@@ -159,7 +159,7 @@
             btn_filtroTodos.FlatAppearance.BorderColor = Color.Tan;
             btn_filtroTodos.FlatStyle = FlatStyle.Flat;
             btn_filtroTodos.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic);
-            btn_filtroTodos.Location = new Point(260, 161);
+            btn_filtroTodos.Location = new Point(328, 161);
             btn_filtroTodos.Margin = new Padding(0);
             btn_filtroTodos.Name = "btn_filtroTodos";
             btn_filtroTodos.Size = new Size(173, 51);
@@ -176,7 +176,7 @@
             btn_borrar.FlatAppearance.BorderColor = Color.DarkRed;
             btn_borrar.FlatStyle = FlatStyle.Flat;
             btn_borrar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic);
-            btn_borrar.Location = new Point(237, 497);
+            btn_borrar.Location = new Point(305, 592);
             btn_borrar.Margin = new Padding(0);
             btn_borrar.Name = "btn_borrar";
             btn_borrar.Size = new Size(185, 47);
@@ -193,7 +193,7 @@
             btn_guardarCambios.FlatAppearance.BorderColor = Color.DarkRed;
             btn_guardarCambios.FlatStyle = FlatStyle.Flat;
             btn_guardarCambios.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic);
-            btn_guardarCambios.Location = new Point(451, 497);
+            btn_guardarCambios.Location = new Point(519, 592);
             btn_guardarCambios.Margin = new Padding(0);
             btn_guardarCambios.Name = "btn_guardarCambios";
             btn_guardarCambios.Size = new Size(185, 47);
@@ -210,7 +210,7 @@
             btn_filtroRectificados.FlatAppearance.BorderColor = Color.Tan;
             btn_filtroRectificados.FlatStyle = FlatStyle.Flat;
             btn_filtroRectificados.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic);
-            btn_filtroRectificados.Location = new Point(647, 161);
+            btn_filtroRectificados.Location = new Point(715, 161);
             btn_filtroRectificados.Margin = new Padding(0);
             btn_filtroRectificados.Name = "btn_filtroRectificados";
             btn_filtroRectificados.Size = new Size(173, 51);
@@ -224,7 +224,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(927, 566);
+            ClientSize = new Size(1052, 671);
             Controls.Add(btn_filtroRectificados);
             Controls.Add(btn_guardarCambios);
             Controls.Add(btn_borrar);

@@ -105,6 +105,7 @@
             btn_fmclientes.TabIndex = 3;
             btn_fmclientes.Text = "Seccion de Clientes";
             btn_fmclientes.UseVisualStyleBackColor = false;
+            btn_fmclientes.Click += btn_fmclientes_Click;
             // 
             // btn_salir
             // 

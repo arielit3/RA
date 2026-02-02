@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace RepromosRA
 {
     public static class DatosGlobales
+        //la clase de datos globales se usa para las listas que almacenan los datos de clientes, proveedores y paquetes
     {
         public static List<Cliente> Clientes = new List<Cliente>()
         //creamos una lista para almacenar los clientes cada uno con sus datos

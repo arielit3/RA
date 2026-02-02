@@ -32,5 +32,11 @@ namespace RepromosRA
             fm_SProveedores seccionProveedores = new fm_SProveedores();
             seccionProveedores.ShowDialog();
         }
+
+        private void btn_fmclientes_Click(object sender, EventArgs e)
+        {
+            fm_SClientes SeccionClientes = new fm_SClientes();
+            SeccionClientes.ShowDialog();
+        }
     }
 }
