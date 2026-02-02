@@ -21,6 +21,36 @@ namespace RepromosRA
             new Proveedor { id = 2, Nombre = "FedEx", Contacto = "Ana", Telefono = "987-654-321"},
         };
 
-        public static List<Paquete> Paquetes = new List<Paquete>();
+        public static List<Paquete> Paquetes = new List<Paquete> 
+        {
+            //creamos paquetes para las pruebas
+            new Paquete 
+            { 
+                Id = 1,
+                Nombre = "ps15",
+                Cliente = null,
+                Proveedor = Proveedores[0],
+                Estado = "Recibido",
+                Fecha = DateTime.Now.AddDays(-2)
+            },
+            new Paquete 
+            { 
+                Id = 2,
+                Nombre = "Documentos legales",
+                Cliente = Clientes[1],
+                Proveedor = null,
+                Estado = "Rectificado",
+                Fecha = DateTime.Now.AddDays(-1)
+            },
+            new Paquete 
+            { 
+                Id = 3,
+                Nombre = "Laptop",
+                Cliente = Clientes[0],
+                Proveedor = Proveedores[1],
+                Estado = "En revision",
+                Fecha = DateTime.Now
+            }
+        };
     }
 }

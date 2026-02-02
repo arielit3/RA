@@ -25,9 +25,8 @@ namespace RepromosRA
             cbox_proveedor.ValueMember = "Id";
 
             //cargamos los estados disponibles
-            cbox_estado.Items.Add("En espera"); //el paquete esta en espera de recibirse
+            cbox_estado.Items.Add("En revision"); //el paquete esta en espera de recibirse
             cbox_estado.Items.Add("Recibido"); //el paquete ya fue recibido
-            cbox_estado.Items.Add("Regresado"); //el paquete fue regresado
             cbox_estado.Items.Add("Rectificado"); //rectificado, osea que fue regresado
             cbox_estado.SelectedIndex = 1; //por defecto lo dejamos en recibido
 
@@ -46,7 +45,7 @@ namespace RepromosRA
         private void btn_registrarPaq_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbox_nombre.Text) || cbox_proveedor.SelectedItem == null)
-                //validamos que se haya ingresado un nombre y seleccionado un proveedor
+            //validamos que se haya ingresado un nombre y seleccionado un proveedor
             {
                 MessageBox.Show("Debes ingresar el nombre del paquete y seleccionar un proveedor.");
                 //si no se ingresa le decimos que debe de hacerlo
@@ -56,7 +55,7 @@ namespace RepromosRA
             Paquete nuevo_paq = new Paquete
             //creamos la estructura para un nuevo paquete
             {
-                id = DatosGlobales.Paquetes.Count+1,
+                Id = DatosGlobales.Paquetes.Count + 1,
                 Nombre = tbox_nombre.Text,
                 Cliente = null,
                 Proveedor = (Proveedor)cbox_proveedor.SelectedItem,
@@ -75,6 +74,16 @@ namespace RepromosRA
             cbox_proveedor.SelectedItem = -1;
             cbox_estado.SelectedIndex = 1; //dejamos el estado en recibido por defecto
             dtime_fecha.Value = DateTime.Now;
+
+        }
+
+        private void cbox_proveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbox_estado_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

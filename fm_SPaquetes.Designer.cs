@@ -122,6 +122,7 @@
             btn_fmPaquetesGeneral.TabIndex = 10;
             btn_fmPaquetesGeneral.Text = "Todos los paquetes";
             btn_fmPaquetesGeneral.UseVisualStyleBackColor = false;
+            btn_fmPaquetesGeneral.Click += btn_fmPaquetesGeneral_Click;
             // 
             // fm_SPaquetes
             // 

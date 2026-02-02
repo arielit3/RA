@@ -143,6 +143,7 @@
             cbox_proveedor.Name = "cbox_proveedor";
             cbox_proveedor.Size = new Size(151, 28);
             cbox_proveedor.TabIndex = 2;
+            cbox_proveedor.SelectedIndexChanged += cbox_proveedor_SelectedIndexChanged;
             // 
             // cbox_estado
             // 
@@ -151,6 +152,7 @@
             cbox_estado.Name = "cbox_estado";
             cbox_estado.Size = new Size(151, 28);
             cbox_estado.TabIndex = 3;
+            cbox_estado.SelectedIndexChanged += cbox_estado_SelectedIndexChanged;
             // 
             // btn_registrarPaq
             // 

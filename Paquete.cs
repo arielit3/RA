@@ -8,7 +8,7 @@ namespace RepromosRA
 {
     public class Paquete
     {
-        public int id {  get; set; }
+        public int Id {  get; set; }
         public string Nombre { get; set; }//nombre de el paquete
         public Cliente? Cliente {  get; set; }//cliente relacionado con el paquete, puede ser null cuando es recibido
         //pero no enviado jaja
@@ -16,5 +16,7 @@ namespace RepromosRA
         //donde el paquete es comprado
         public string Estado { get; set; }//estado de el paquete
         public DateTime Fecha { get; set; }//fecha de recibido o vendido de el paquete
+
+
     }
 }
