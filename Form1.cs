@@ -6,5 +6,10 @@ namespace RepromosRA
         {
             InitializeComponent();
         }
+
+        private void fm_inicio_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
