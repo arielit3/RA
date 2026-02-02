@@ -37,7 +37,8 @@ namespace RepromosRA
 
         private void btn_fmEnvioPaq_Click(object sender, EventArgs e)
         {
-
+            fm_SPaquetes_Envio formularioPaqEnvio = new fm_SPaquetes_Envio();
+            formularioPaqEnvio.ShowDialog();
         }
 
         private void btn_fmPaquetesGeneral_Click(object sender, EventArgs e)

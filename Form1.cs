@@ -26,5 +26,11 @@ namespace RepromosRA
             //por medio de la instancia usamos el metodo showdialog para abrir el form y 
             //por el show dialog, no se permite interactuar con este form al mismo tiempo que esta abierto
         }
+
+        private void btn_fmproveedores_Click(object sender, EventArgs e)
+        {
+            fm_SProveedores seccionProveedores = new fm_SProveedores();
+            seccionProveedores.ShowDialog();
+        }
     }
 }

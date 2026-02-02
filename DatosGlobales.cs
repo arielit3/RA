@@ -17,8 +17,8 @@ namespace RepromosRA
         };
         public static List<Proveedor> Proveedores = new List<Proveedor>()
         {
-            new Proveedor { id = 1, Nombre = "DHL", Contacto = "Carlos", Telefono = "123-456-789"},
-            new Proveedor { id = 2, Nombre = "FedEx", Contacto = "Ana", Telefono = "987-654-321"},
+            new Proveedor { id = 1, Nombre = "DHL", Contacto = "Carlos", Telefono = "123-456-789", Direccion = "Las Torres"},
+            new Proveedor { id = 2, Nombre = "FedEx", Contacto = "Ana", Telefono = "987-654-321", Direccion = "El paso TX"},
         };
 
         public static List<Paquete> Paquetes = new List<Paquete> 

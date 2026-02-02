@@ -88,6 +88,7 @@
             btn_fmproveedores.TabIndex = 2;
             btn_fmproveedores.Text = "Seccion de Proveedores";
             btn_fmproveedores.UseVisualStyleBackColor = false;
+            btn_fmproveedores.Click += btn_fmproveedores_Click;
             // 
             // btn_fmclientes
             // 
