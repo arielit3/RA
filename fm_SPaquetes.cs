@@ -20,10 +20,23 @@ namespace RepromosRA
         private void btn_regresar_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Desea regresar al inicio?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //Con esto obtenemos un resultado de si el usuario desea regresar al inicio o no solicitando confirmacion
             if (resultado == DialogResult.Yes)
+            //el dialogresult funciona como una variable bool, donde yes es true y no es false, luego al seleccionar una opcion ya por esto si es yes 
             {
-                this.Close();
+                this.Close();//cerramos esta ventana y regresamos al forminiciial
             }
+
+        }
+
+        private void btn_fmRecepcionPaq_Click(object sender, EventArgs e)
+        {
+            fm_SPaquetes_Recepcion formularioRecepcionPaq = new fm_SPaquetes_Recepcion();
+            formularioRecepcionPaq.ShowDialog();
+        }
+
+        private void btn_fmEnvioPaq_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -33,6 +33,7 @@
             label2 = new Label();
             btn_fmEnvioPaq = new Button();
             btn_fmRecepcionPaq = new Button();
+            btn_fmPaquetesGeneral = new Button();
             SuspendLayout();
             // 
             // btn_regresar
@@ -80,13 +81,14 @@
             btn_fmEnvioPaq.FlatAppearance.BorderColor = Color.Tan;
             btn_fmEnvioPaq.FlatStyle = FlatStyle.Flat;
             btn_fmEnvioPaq.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold | FontStyle.Italic);
-            btn_fmEnvioPaq.Location = new Point(211, 253);
+            btn_fmEnvioPaq.Location = new Point(211, 203);
             btn_fmEnvioPaq.Margin = new Padding(0);
             btn_fmEnvioPaq.Name = "btn_fmEnvioPaq";
-            btn_fmEnvioPaq.Size = new Size(359, 74);
+            btn_fmEnvioPaq.Size = new Size(359, 51);
             btn_fmEnvioPaq.TabIndex = 9;
             btn_fmEnvioPaq.Text = "Envio de Paquetes";
             btn_fmEnvioPaq.UseVisualStyleBackColor = false;
+            btn_fmEnvioPaq.Click += btn_fmEnvioPaq_Click;
             // 
             // btn_fmRecepcionPaq
             // 
@@ -99,10 +101,27 @@
             btn_fmRecepcionPaq.Location = new Point(211, 141);
             btn_fmRecepcionPaq.Margin = new Padding(0);
             btn_fmRecepcionPaq.Name = "btn_fmRecepcionPaq";
-            btn_fmRecepcionPaq.Size = new Size(359, 74);
+            btn_fmRecepcionPaq.Size = new Size(359, 51);
             btn_fmRecepcionPaq.TabIndex = 8;
             btn_fmRecepcionPaq.Text = "Recepcion de Paquetes";
             btn_fmRecepcionPaq.UseVisualStyleBackColor = false;
+            btn_fmRecepcionPaq.Click += btn_fmRecepcionPaq_Click;
+            // 
+            // btn_fmPaquetesGeneral
+            // 
+            btn_fmPaquetesGeneral.AccessibleDescription = "Ir a la seccion de paquetes";
+            btn_fmPaquetesGeneral.BackColor = Color.LightCyan;
+            btn_fmPaquetesGeneral.Cursor = Cursors.Hand;
+            btn_fmPaquetesGeneral.FlatAppearance.BorderColor = Color.Tan;
+            btn_fmPaquetesGeneral.FlatStyle = FlatStyle.Flat;
+            btn_fmPaquetesGeneral.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold | FontStyle.Italic);
+            btn_fmPaquetesGeneral.Location = new Point(211, 271);
+            btn_fmPaquetesGeneral.Margin = new Padding(0);
+            btn_fmPaquetesGeneral.Name = "btn_fmPaquetesGeneral";
+            btn_fmPaquetesGeneral.Size = new Size(359, 51);
+            btn_fmPaquetesGeneral.TabIndex = 10;
+            btn_fmPaquetesGeneral.Text = "Todos los paquetes";
+            btn_fmPaquetesGeneral.UseVisualStyleBackColor = false;
             // 
             // fm_SPaquetes
             // 
@@ -110,6 +129,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_fmPaquetesGeneral);
             Controls.Add(btn_fmEnvioPaq);
             Controls.Add(btn_fmRecepcionPaq);
             Controls.Add(label2);
@@ -130,5 +150,6 @@
         private Label label2;
         private Button btn_fmEnvioPaq;
         private Button btn_fmRecepcionPaq;
+        private Button btn_fmPaquetesGeneral;
     }
 }
