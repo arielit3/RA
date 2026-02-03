@@ -35,7 +35,6 @@
             ROL = new Label();
             txtBxFullName = new TextBox();
             btnReturn = new Button();
-            listBxROL = new ListBox();
             txtBxUser = new TextBox();
             label3 = new Label();
             txtBxPassword = new TextBox();
@@ -43,6 +42,7 @@
             label5 = new Label();
             txtBxConfirmPass = new TextBox();
             btnRegisterUser = new Button();
+            comboBxROL = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pBxLogo).BeginInit();
             SuspendLayout();
             // 
@@ -111,14 +111,6 @@
             btnReturn.Text = "Return";
             btnReturn.UseVisualStyleBackColor = true;
             // 
-            // listBxROL
-            // 
-            listBxROL.FormattingEnabled = true;
-            listBxROL.Location = new Point(97, 202);
-            listBxROL.Name = "listBxROL";
-            listBxROL.Size = new Size(224, 24);
-            listBxROL.TabIndex = 12;
-            // 
             // txtBxUser
             // 
             txtBxUser.Location = new Point(97, 255);
@@ -178,11 +170,20 @@
             btnRegisterUser.Text = "Register User";
             btnRegisterUser.UseVisualStyleBackColor = false;
             // 
+            // comboBxROL
+            // 
+            comboBxROL.FormattingEnabled = true;
+            comboBxROL.Location = new Point(97, 201);
+            comboBxROL.Name = "comboBxROL";
+            comboBxROL.Size = new Size(224, 28);
+            comboBxROL.TabIndex = 20;
+            // 
             // RegisterUser
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(577, 476);
+            Controls.Add(comboBxROL);
             Controls.Add(btnRegisterUser);
             Controls.Add(txtBxConfirmPass);
             Controls.Add(label5);
@@ -190,7 +191,6 @@
             Controls.Add(label4);
             Controls.Add(txtBxUser);
             Controls.Add(label3);
-            Controls.Add(listBxROL);
             Controls.Add(btnReturn);
             Controls.Add(txtBxFullName);
             Controls.Add(ROL);
@@ -215,7 +215,6 @@
         private Label ROL;
         private TextBox txtBxFullName;
         private Button btnReturn;
-        private ListBox listBxROL;
         private TextBox txtBxUser;
         private Label label3;
         private TextBox txtBxPassword;
@@ -223,5 +222,6 @@
         private Label label5;
         private TextBox txtBxConfirmPass;
         private Button btnRegisterUser;
+        private ComboBox comboBxROL;
     }
 }
