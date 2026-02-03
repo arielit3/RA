@@ -29,17 +29,22 @@
         private void InitializeComponent()
         {
             pBxLogo = new PictureBox();
-            textBox1 = new TextBox();
+            txtBxCodigoRastreo = new TextBox();
             lblCodigoRastreo = new Label();
             label1 = new Label();
             labelWelcome = new Label();
             labelByUser = new Label();
-            comboBox1 = new ComboBox();
+            cmbCliente = new ComboBox();
             label2 = new Label();
-            comboBox2 = new ComboBox();
+            cmbProveedor = new ComboBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            txtBxPeso = new TextBox();
             label4 = new Label();
+            label5 = new Label();
+            txtDescripcion = new TextBox();
+            btnRegisterUser = new Button();
+            label6 = new Label();
+            btnRegresar = new Button();
             ((System.ComponentModel.ISupportInitialize)pBxLogo).BeginInit();
             SuspendLayout();
             // 
@@ -54,17 +59,18 @@
             pBxLogo.TabIndex = 8;
             pBxLogo.TabStop = false;
             // 
-            // textBox1
+            // txtBxCodigoRastreo
             // 
-            textBox1.Location = new Point(12, 187);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(167, 27);
-            textBox1.TabIndex = 9;
+            txtBxCodigoRastreo.Location = new Point(178, 187);
+            txtBxCodigoRastreo.Name = "txtBxCodigoRastreo";
+            txtBxCodigoRastreo.Size = new Size(167, 27);
+            txtBxCodigoRastreo.TabIndex = 9;
+            txtBxCodigoRastreo.TextChanged += txtBxCodigoRastreo_TextChanged;
             // 
             // lblCodigoRastreo
             // 
             lblCodigoRastreo.AutoSize = true;
-            lblCodigoRastreo.Location = new Point(12, 164);
+            lblCodigoRastreo.Location = new Point(178, 164);
             lblCodigoRastreo.Name = "lblCodigoRastreo";
             lblCodigoRastreo.Size = new Size(136, 20);
             lblCodigoRastreo.TabIndex = 10;
@@ -99,73 +105,131 @@
             labelByUser.Size = new Size(27, 28);
             labelByUser.TabIndex = 13;
             labelByUser.Text = ".";
+            labelByUser.Click += labelByUser_Click;
             // 
-            // comboBox1
+            // cmbCliente
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 261);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(167, 28);
-            comboBox1.TabIndex = 14;
+            cmbCliente.FormattingEnabled = true;
+            cmbCliente.Location = new Point(376, 186);
+            cmbCliente.Name = "cmbCliente";
+            cmbCliente.Size = new Size(167, 28);
+            cmbCliente.TabIndex = 14;
+            cmbCliente.SelectedIndexChanged += cmbCliente_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 238);
+            label2.Location = new Point(376, 163);
             label2.Name = "label2";
             label2.Size = new Size(119, 20);
             label2.TabIndex = 15;
             label2.Text = "Lista de Clientes:";
             // 
-            // comboBox2
+            // cmbProveedor
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(12, 334);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(167, 28);
-            comboBox2.TabIndex = 16;
+            cmbProveedor.FormattingEnabled = true;
+            cmbProveedor.Location = new Point(178, 263);
+            cmbProveedor.Name = "cmbProveedor";
+            cmbProveedor.Size = new Size(167, 28);
+            cmbProveedor.TabIndex = 16;
+            cmbProveedor.SelectedIndexChanged += cmbProveedor_SelectedIndexChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 311);
+            label3.Location = new Point(178, 240);
             label3.Name = "label3";
             label3.Size = new Size(149, 20);
             label3.TabIndex = 17;
             label3.Text = "Lista de Proveedores:";
             // 
-            // textBox2
+            // txtBxPeso
             // 
-            textBox2.Location = new Point(12, 399);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(173, 27);
-            textBox2.TabIndex = 18;
+            txtBxPeso.Location = new Point(376, 263);
+            txtBxPeso.Name = "txtBxPeso";
+            txtBxPeso.Size = new Size(173, 27);
+            txtBxPeso.TabIndex = 18;
+            txtBxPeso.TextChanged += txtBxPeso_TextChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 376);
+            label4.Location = new Point(376, 240);
             label4.Name = "label4";
             label4.Size = new Size(74, 20);
             label4.TabIndex = 19;
             label4.Text = "Peso (KG):";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(279, 309);
+            label5.Name = "label5";
+            label5.Size = new Size(90, 20);
+            label5.TabIndex = 20;
+            label5.Text = "Descripción:";
+            // 
+            // txtDescripcion
+            // 
+            txtDescripcion.Location = new Point(279, 332);
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(185, 27);
+            txtDescripcion.TabIndex = 21;
+            txtDescripcion.TextChanged += txtDescripcion_TextChanged;
+            // 
+            // btnRegisterUser
+            // 
+            btnRegisterUser.BackColor = Color.Chartreuse;
+            btnRegisterUser.Font = new Font("Showcard Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnRegisterUser.Location = new Point(311, 400);
+            btnRegisterUser.Name = "btnRegisterUser";
+            btnRegisterUser.Size = new Size(125, 50);
+            btnRegisterUser.TabIndex = 22;
+            btnRegisterUser.Text = "Registrar Recepción";
+            btnRegisterUser.UseVisualStyleBackColor = false;
+            btnRegisterUser.Click += btnRegisterUser_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("SimSun", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(255, 133);
+            label6.Name = "label6";
+            label6.Size = new Size(218, 18);
+            label6.TabIndex = 23;
+            label6.Text = "Recepción de Paquetes";
+            // 
+            // btnRegresar
+            // 
+            btnRegresar.Location = new Point(694, 501);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(94, 29);
+            btnRegresar.TabIndex = 24;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
             // FrmRecepcionPaquetes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 542);
+            Controls.Add(btnRegresar);
+            Controls.Add(label6);
+            Controls.Add(btnRegisterUser);
+            Controls.Add(txtDescripcion);
+            Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(txtBxPeso);
             Controls.Add(label3);
-            Controls.Add(comboBox2);
+            Controls.Add(cmbProveedor);
             Controls.Add(label2);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbCliente);
             Controls.Add(labelByUser);
             Controls.Add(labelWelcome);
             Controls.Add(label1);
             Controls.Add(lblCodigoRastreo);
-            Controls.Add(textBox1);
+            Controls.Add(txtBxCodigoRastreo);
             Controls.Add(pBxLogo);
             Name = "FrmRecepcionPaquetes";
             Text = "FrmRecepcionPaquetes";
@@ -178,16 +242,21 @@
         #endregion
 
         private PictureBox pBxLogo;
-        private TextBox textBox1;
+        private TextBox txtBxCodigoRastreo;
         private Label lblCodigoRastreo;
         private Label label1;
         private Label labelWelcome;
         private Label labelByUser;
-        private ComboBox comboBox1;
+        private ComboBox cmbCliente;
         private Label label2;
-        private ComboBox comboBox2;
+        private ComboBox cmbProveedor;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txtBxPeso;
         private Label label4;
+        private Label label5;
+        private TextBox txtDescripcion;
+        private Button btnRegisterUser;
+        private Label label6;
+        private Button btnRegresar;
     }
 }

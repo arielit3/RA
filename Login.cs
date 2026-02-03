@@ -1,3 +1,6 @@
+using RepromosRA.Repositories;
+using RepromosRA.Services;
+
 namespace RepromosRA
 {
     public partial class Login : Form
@@ -29,8 +32,28 @@ namespace RepromosRA
                 return;
             }
 
-            // TEMPORAL (solo para probar flujo)
-            MessageBox.Show("Login attempt: OK (pending DB validation)");
+            try
+            {
+                var auth = new AuthService(new UsuarioRepository());
+                var loggedUser = auth.Login(user, pass);
+
+                // Abrir menú principal y pasar el usuario
+                using (var main = new FrmMain(loggedUser))
+                {
+                    this.Hide();
+                    main.ShowDialog();
+                    this.Show();
+                }
+
+                // Limpieza opcional
+                TxtUser.Clear();
+                txtPassword.Clear();
+                TxtUser.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void TxtUser_TextChanged(object sender, EventArgs e)
