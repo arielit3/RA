@@ -101,6 +101,7 @@
             txtBxFullName.Name = "txtBxFullName";
             txtBxFullName.Size = new Size(224, 27);
             txtBxFullName.TabIndex = 10;
+            txtBxFullName.TextChanged += txtBxFullName_TextChanged;
             // 
             // btnReturn
             // 
@@ -110,6 +111,7 @@
             btnReturn.TabIndex = 11;
             btnReturn.Text = "Return";
             btnReturn.UseVisualStyleBackColor = true;
+            btnReturn.Click += btnReturn_Click;
             // 
             // txtBxUser
             // 
@@ -117,6 +119,7 @@
             txtBxUser.Name = "txtBxUser";
             txtBxUser.Size = new Size(224, 27);
             txtBxUser.TabIndex = 14;
+            txtBxUser.TextChanged += txtBxUser_TextChanged;
             // 
             // label3
             // 
@@ -133,6 +136,7 @@
             txtBxPassword.Name = "txtBxPassword";
             txtBxPassword.Size = new Size(224, 27);
             txtBxPassword.TabIndex = 16;
+            txtBxPassword.TextChanged += txtBxPassword_TextChanged;
             // 
             // label4
             // 
@@ -151,6 +155,7 @@
             label5.Size = new Size(158, 20);
             label5.TabIndex = 17;
             label5.Text = "CONFIRM PASSWORD:";
+            label5.Click += label5_Click;
             // 
             // txtBxConfirmPass
             // 
@@ -158,6 +163,7 @@
             txtBxConfirmPass.Name = "txtBxConfirmPass";
             txtBxConfirmPass.Size = new Size(224, 27);
             txtBxConfirmPass.TabIndex = 18;
+            txtBxConfirmPass.TextChanged += txtBxConfirmPass_TextChanged;
             // 
             // btnRegisterUser
             // 
@@ -169,6 +175,7 @@
             btnRegisterUser.TabIndex = 19;
             btnRegisterUser.Text = "Register User";
             btnRegisterUser.UseVisualStyleBackColor = false;
+            btnRegisterUser.Click += btnRegisterUser_Click;
             // 
             // comboBxROL
             // 
@@ -177,6 +184,7 @@
             comboBxROL.Name = "comboBxROL";
             comboBxROL.Size = new Size(224, 28);
             comboBxROL.TabIndex = 20;
+            comboBxROL.SelectedIndexChanged += comboBxROL_SelectedIndexChanged;
             // 
             // RegisterUser
             // 

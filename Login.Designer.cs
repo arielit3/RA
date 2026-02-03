@@ -59,6 +59,7 @@
             linkLblRegister.TabIndex = 1;
             linkLblRegister.TabStop = true;
             linkLblRegister.Text = "* Register User if you don't have user";
+            linkLblRegister.LinkClicked += linkLblRegister_LinkClicked;
             // 
             // lblUser
             // 
@@ -75,6 +76,7 @@
             TxtUser.Name = "TxtUser";
             TxtUser.Size = new Size(198, 27);
             TxtUser.TabIndex = 3;
+            TxtUser.TextChanged += TxtUser_TextChanged;
             // 
             // lblPassword
             // 
@@ -91,6 +93,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(198, 27);
             txtPassword.TabIndex = 5;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // pBxLogo
             // 
@@ -111,6 +114,7 @@
             btnLogin.TabIndex = 7;
             btnLogin.Text = "login";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnExit
             // 
@@ -138,6 +142,7 @@
             Controls.Add(label1);
             Name = "Login";
             Text = "Login";
+            Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)pBxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
