@@ -12,6 +12,18 @@ namespace RepromosRA
 {
     public partial class fm_SPaquetes_General : Form
     {
+        //Clase para poder cambiar los datos en el DataGrid
+        public class PaqueteDisplay
+        {
+            public int Id { get; set; }
+            public string Nombre { get; set; }
+            public string ClienteNombre { get; set; }
+            public string ProveedorNombre { get; set; }
+            public string Estado { get; set; }
+            public DateTime Fecha { get; set; }
+        }
+
+        private List<PaqueteDisplay> datosDisplay = new List<PaqueteDisplay>(); //Lista para los paquetes
         public fm_SPaquetes_General()
         {
             InitializeComponent();
@@ -33,7 +45,8 @@ namespace RepromosRA
                 //columna de id
                 DataPropertyName = "Id",
                 HeaderText = "ID",
-                Name = "Id"
+                Name = "Id",
+                ReadOnly = true //El id no puede editarse
                 //en caso de querer acceder por medio de buscar exactamente un valor de columna, debe de
                 //darle nombre a cada columna
             });
@@ -42,21 +55,25 @@ namespace RepromosRA
             dgview_paquetes.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "Nombre",
-                HeaderText = "Nombre del Paquete"
+                HeaderText = "Nombre del Paquete",
+                ReadOnly = true
             });
 
             // Columna Cliente
             dgview_paquetes.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "ClienteNombre",
-                HeaderText = "Cliente"
+                HeaderText = "Cliente",
+                ReadOnly = true
+
             });
 
             // Columna Proveedor
             dgview_paquetes.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "ProveedorNombre",
-                HeaderText = "Proveedor"
+                HeaderText = "Proveedor",
+                ReadOnly = true
             });
 
 
@@ -75,8 +92,8 @@ namespace RepromosRA
                 Name = "Estado", // importante para acceder luego
                 ValueType = typeof(string), // asegura que los valores son string
                 DataSource = new string[] { "En revision", "Recibido", "Regresado", "Rectificado", "Enviado" },
-                DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton // muestra el botón desplegable
-
+                DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton, // muestra el botón desplegable
+                FlatStyle = FlatStyle.Flat
             };
             dgview_paquetes.Columns.Add(estadoColumn);
             // Agregamos el evento para manejar cambios en el estado
@@ -85,7 +102,8 @@ namespace RepromosRA
             dgview_paquetes.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "Fecha",
-                HeaderText = "Fecha"
+                HeaderText = "Fecha",
+                ReadOnly = true
             });
 
             //Llamamos a un metodo para cargar los paquetes desde el inicio
@@ -96,20 +114,21 @@ namespace RepromosRA
 
         private void CargarPaquetes(List<Paquete> lista)
         {
-            //creamos una proyeccion para mostrar los datos en el datagridview
-            var datos = lista.Select(p => new
+            // Convertir los paquetes a objetos PaqueteDisplay
+            datosDisplay = lista.Select(p => new PaqueteDisplay
             {
-                p.Id,
-                p.Nombre,
+                Id = p.Id,
+                Nombre = p.Nombre,
                 ClienteNombre = p.Cliente?.Nombre ?? "N/A",
                 ProveedorNombre = p.Proveedor?.Nombre ?? "N/A",
-                p.Estado,
-                p.Fecha
+                Estado = p.Estado,
+                Fecha = p.Fecha
             }).ToList();
             //convertimos cada objeto Paquete en un objeto anonimo con las propiedades necesarias
             //para asi mandarlas a el datagridview
 
-            dgview_paquetes.DataSource = datos;
+            dgview_paquetes.DataSource = null;
+            dgview_paquetes.DataSource = datosDisplay;
             //mandamos los datos de cada uno a el datagridview hasta finalizar
         }
 
@@ -157,20 +176,21 @@ namespace RepromosRA
 
         private void btn_guardarCambios_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgview_paquetes.Rows)
-            {
-                int paqueteId = (int)row.Cells["Id"].Value;
-                var paquete = DatosGlobales.Paquetes.FirstOrDefault(p => p.Id == paqueteId);
-                //con paquete se obtiene el paquete correspondiente a la fila actual
-                if (paquete != null)
-                //si el paquete no es nulo, se actualiza su estado con el valor de la celda "Estado"
-                {
-                    //
-                    paquete.Estado = row.Cells["Estado"].Value.ToString();
-                }
+            // Finalizar cualquier edición en curso
+            dgview_paquetes.EndEdit();
 
+            // Actualizar los paquetes originales con los cambios
+            foreach (var displayItem in datosDisplay)
+            {
+                var paquete = DatosGlobales.Paquetes.FirstOrDefault(p => p.Id == displayItem.Id);
+                if (paquete != null)
+                {
+                    paquete.Estado = displayItem.Estado;
+                }
             }
-            MessageBox.Show("Cambios guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            MessageBox.Show("Cambios guardados correctamente.", "Éxito",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btn_borrar_Click(object sender, EventArgs e)
