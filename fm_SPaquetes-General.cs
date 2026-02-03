@@ -150,7 +150,7 @@ namespace RepromosRA
         private void btn_filtroRecibidos_Click(object sender, EventArgs e)
         {
             //un boton que funciona como filtro directo de todos los paquetes que esten con estado de recibidos
-            var resultado = DatosGlobales.Paquetes.Where(p => p.Cliente == null).ToList();
+            var resultado = DatosGlobales.Paquetes.Where(p => p.Cliente == null || p.Estado == "Recibido").ToList();
             //creamos resultado que es una lista de paquetes que cumplen con la condicion que esten recibidos
             CargarPaquetes(resultado);
             //llamamos a el metodo de cargar paquetes para mostrar solo los paquetes con estado de recibidos
@@ -165,13 +165,14 @@ namespace RepromosRA
 
         private void btn_filtroEnviados_Click(object sender, EventArgs e)
         {
-            var resultado = DatosGlobales.Paquetes.Where(p => p.Proveedor == null).ToList();
+            var resultado = DatosGlobales.Paquetes.Where(p => p.Proveedor == null || p.Estado == "Enviado").ToList();
             CargarPaquetes(resultado);
         }
 
         private void btn_filtroRectificados_Click(object sender, EventArgs e)
         {
             var resultado = DatosGlobales.Paquetes.Where(p => p.Estado == "Rectificado").ToList();
+            CargarPaquetes(resultado);
         }
 
         private void btn_guardarCambios_Click(object sender, EventArgs e)

@@ -233,6 +233,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "fm_SClientes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "fm_SClientes";
             Load += fm_SClientes_Load;
             ((System.ComponentModel.ISupportInitialize)dgview_clientes).EndInit();
