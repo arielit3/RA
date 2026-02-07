@@ -49,7 +49,7 @@ namespace RepromosRA
                 Name = "Contacto"
             });
 
-            // Columna Teléfono
+            // Columna Telefono
             dgview_proveedores.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "Telefono",
