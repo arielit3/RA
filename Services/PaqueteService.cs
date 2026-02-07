@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Data.Sqlite;
 using RepromosRA.Models;
 using RepromosRA.Repositories;
@@ -18,11 +15,9 @@ namespace RepromosRA.Services
             _repo = repo;
         }
 
-        public void RegistrarRecepcion(Paquete p)
+        // ✅ Ahora genera el código automáticamente y lo regresa
+        public string RegistrarRecepcion(Paquete p)
         {
-            if (string.IsNullOrWhiteSpace(p.CodigoRastreo))
-                throw new ArgumentException("CodigoRastreo es obligatorio.");
-
             if (p.ClienteId <= 0 || p.ProveedorId <= 0)
                 throw new ArgumentException("Cliente y Proveedor son obligatorios.");
 
@@ -30,18 +25,44 @@ namespace RepromosRA.Services
             p.FechaRecepcion = DateTime.Now;
             p.FechaEnvio = null;
 
-            try
+            // ✅ Si viene vacío, lo generamos automáticamente
+            if (string.IsNullOrWhiteSpace(p.CodigoRastreo))
+                p.CodigoRastreo = GenerarCodigoRastreo();
+
+            // Por si ocurre una colisión (muy raro), reintenta generando otro
+            for (int intento = 1; intento <= 3; intento++)
             {
-                _repo.Add(p);
+                try
+                {
+                    _repo.Add(p);
+                    return p.CodigoRastreo;
+                }
+                catch (SqliteException ex) when (ex.Message.ToLower().Contains("unique"))
+                {
+                    if (intento == 3)
+                        throw new InvalidOperationException("No se pudo generar un código único de rastreo. Intenta de nuevo.");
+
+                    p.CodigoRastreo = GenerarCodigoRastreo();
+                }
             }
-            catch (SqliteException ex) when (ex.Message.ToLower().Contains("unique"))
-            {
-                throw new InvalidOperationException("El código de rastreo ya existe.");
-            }
+
+            // No debería llegar aquí
+            throw new InvalidOperationException("Error inesperado al registrar la recepción.");
+        }
+
+        private string GenerarCodigoRastreo()
+        {
+            // AR-YYYYMMDD-XXXXXXXX
+            string fecha = DateTime.Now.ToString("yyyyMMdd");
+            string rand = Guid.NewGuid().ToString("N").Substring(0, 8).ToUpper();
+            return $"AR-{fecha}-{rand}";
         }
 
         public void RegistrarEnvio(string codigoRastreo)
         {
+            if (string.IsNullOrWhiteSpace(codigoRastreo))
+                throw new ArgumentException("Código de rastreo obligatorio.");
+
             var p = _repo.GetByCodigo(codigoRastreo);
             if (p == null) throw new InvalidOperationException("Paquete no encontrado.");
 
@@ -54,6 +75,9 @@ namespace RepromosRA.Services
 
         public void MarcarEntregado(string codigoRastreo)
         {
+            if (string.IsNullOrWhiteSpace(codigoRastreo))
+                throw new ArgumentException("Código de rastreo obligatorio.");
+
             var p = _repo.GetByCodigo(codigoRastreo);
             if (p == null) throw new InvalidOperationException("Paquete no encontrado.");
 
@@ -66,10 +90,18 @@ namespace RepromosRA.Services
 
         public Paquete Consultar(string codigoRastreo)
         {
+            if (string.IsNullOrWhiteSpace(codigoRastreo))
+                throw new ArgumentException("Código de rastreo obligatorio.");
+
             var p = _repo.GetByCodigo(codigoRastreo);
             if (p == null) throw new InvalidOperationException("Paquete no encontrado.");
             return p;
         }
+
+        // ✅ Para llenar DataGridView en Tracking
+        public List<Paquete> ListarTodos()
+        {
+            return _repo.GetAll();
+        }
     }
 }
-

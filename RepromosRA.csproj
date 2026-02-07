@@ -34,7 +34,7 @@
 
   <ItemGroup>
     <None Update="AppData\database.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

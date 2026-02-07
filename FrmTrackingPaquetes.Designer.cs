@@ -47,7 +47,10 @@
             lblClienteID = new Label();
             lblProveedorID = new Label();
             lblFechas = new Label();
+            dgvPaquetes = new DataGridView();
+            btnRefrescarDataGridView = new Button();
             ((System.ComponentModel.ISupportInitialize)pBxLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPaquetes).BeginInit();
             SuspendLayout();
             // 
             // label6
@@ -105,7 +108,7 @@
             // lblCodigoRastreo
             // 
             lblCodigoRastreo.AutoSize = true;
-            lblCodigoRastreo.Location = new Point(51, 225);
+            lblCodigoRastreo.Location = new Point(7, 225);
             lblCodigoRastreo.Name = "lblCodigoRastreo";
             lblCodigoRastreo.Size = new Size(136, 20);
             lblCodigoRastreo.TabIndex = 30;
@@ -113,7 +116,7 @@
             // 
             // txtBxCodigoRastreo
             // 
-            txtBxCodigoRastreo.Location = new Point(51, 248);
+            txtBxCodigoRastreo.Location = new Point(7, 248);
             txtBxCodigoRastreo.Name = "txtBxCodigoRastreo";
             txtBxCodigoRastreo.Size = new Size(167, 27);
             txtBxCodigoRastreo.TabIndex = 29;
@@ -122,7 +125,7 @@
             // 
             btnBuscar.BackColor = Color.Chartreuse;
             btnBuscar.Font = new Font("Showcard Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnBuscar.Location = new Point(122, 388);
+            btnBuscar.Location = new Point(122, 491);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(125, 50);
             btnBuscar.TabIndex = 31;
@@ -134,7 +137,7 @@
             // 
             btnRegistrarEnvio.BackColor = Color.Chartreuse;
             btnRegistrarEnvio.Font = new Font("Showcard Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnRegistrarEnvio.Location = new Point(384, 388);
+            btnRegistrarEnvio.Location = new Point(384, 491);
             btnRegistrarEnvio.Name = "btnRegistrarEnvio";
             btnRegistrarEnvio.Size = new Size(125, 50);
             btnRegistrarEnvio.TabIndex = 32;
@@ -146,7 +149,7 @@
             // 
             btnMarcarEntregado.BackColor = Color.Chartreuse;
             btnMarcarEntregado.Font = new Font("Showcard Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnMarcarEntregado.Location = new Point(253, 388);
+            btnMarcarEntregado.Location = new Point(253, 491);
             btnMarcarEntregado.Name = "btnMarcarEntregado";
             btnMarcarEntregado.Size = new Size(125, 50);
             btnMarcarEntregado.TabIndex = 33;
@@ -156,7 +159,7 @@
             // 
             // btnRegresar
             // 
-            btnRegresar.Location = new Point(694, 409);
+            btnRegresar.Location = new Point(694, 512);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(94, 29);
             btnRegresar.TabIndex = 34;
@@ -167,7 +170,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(286, 179);
+            label2.Location = new Point(190, 188);
             label2.Name = "label2";
             label2.Size = new Size(57, 20);
             label2.TabIndex = 35;
@@ -176,7 +179,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(286, 225);
+            label3.Location = new Point(190, 234);
             label3.Name = "label3";
             label3.Size = new Size(75, 20);
             label3.TabIndex = 36;
@@ -185,7 +188,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(286, 267);
+            label4.Location = new Point(190, 276);
             label4.Name = "label4";
             label4.Size = new Size(99, 20);
             label4.TabIndex = 37;
@@ -194,16 +197,17 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(286, 311);
+            label5.Location = new Point(190, 320);
             label5.Name = "label5";
             label5.Size = new Size(56, 20);
             label5.TabIndex = 38;
             label5.Text = "Fechas:";
+            label5.Click += label5_Click;
             // 
             // lblEstado
             // 
             lblEstado.AutoSize = true;
-            lblEstado.Location = new Point(353, 179);
+            lblEstado.Location = new Point(257, 188);
             lblEstado.Name = "lblEstado";
             lblEstado.Size = new Size(15, 20);
             lblEstado.TabIndex = 39;
@@ -213,7 +217,7 @@
             // lblClienteID
             // 
             lblClienteID.AutoSize = true;
-            lblClienteID.Location = new Point(370, 225);
+            lblClienteID.Location = new Point(274, 234);
             lblClienteID.Name = "lblClienteID";
             lblClienteID.Size = new Size(15, 20);
             lblClienteID.TabIndex = 40;
@@ -223,7 +227,7 @@
             // lblProveedorID
             // 
             lblProveedorID.AutoSize = true;
-            lblProveedorID.Location = new Point(391, 267);
+            lblProveedorID.Location = new Point(295, 276);
             lblProveedorID.Name = "lblProveedorID";
             lblProveedorID.Size = new Size(15, 20);
             lblProveedorID.TabIndex = 41;
@@ -233,18 +237,40 @@
             // lblFechas
             // 
             lblFechas.AutoSize = true;
-            lblFechas.Location = new Point(348, 311);
+            lblFechas.Location = new Point(252, 320);
             lblFechas.Name = "lblFechas";
             lblFechas.Size = new Size(15, 20);
             lblFechas.TabIndex = 42;
             lblFechas.Text = "-";
             lblFechas.Click += lblFechas_Click;
             // 
+            // dgvPaquetes
+            // 
+            dgvPaquetes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPaquetes.Location = new Point(384, 151);
+            dgvPaquetes.Name = "dgvPaquetes";
+            dgvPaquetes.RowHeadersWidth = 51;
+            dgvPaquetes.Size = new Size(404, 217);
+            dgvPaquetes.TabIndex = 43;
+            dgvPaquetes.CellContentClick += dgvPaquetes_CellContentClick;
+            // 
+            // btnRefrescarDataGridView
+            // 
+            btnRefrescarDataGridView.Location = new Point(552, 388);
+            btnRefrescarDataGridView.Name = "btnRefrescarDataGridView";
+            btnRefrescarDataGridView.Size = new Size(94, 29);
+            btnRefrescarDataGridView.TabIndex = 44;
+            btnRefrescarDataGridView.Text = "Refrescar";
+            btnRefrescarDataGridView.UseVisualStyleBackColor = true;
+            btnRefrescarDataGridView.Click += btnRefrescarDataGridView_Click;
+            // 
             // FrmTrackingPaquetes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 553);
+            Controls.Add(btnRefrescarDataGridView);
+            Controls.Add(dgvPaquetes);
             Controls.Add(lblFechas);
             Controls.Add(lblProveedorID);
             Controls.Add(lblClienteID);
@@ -268,6 +294,7 @@
             Text = "FrmTrackingPaquetes";
             Load += FrmTrackingPaquetes_Load;
             ((System.ComponentModel.ISupportInitialize)pBxLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPaquetes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -293,5 +320,8 @@
         private Label lblClienteID;
         private Label lblProveedorID;
         private Label lblFechas;
+        private DataGridView dataGridView1;
+        private DataGridView dgvPaquetes;
+        private Button btnRefrescarDataGridView;
     }
 }

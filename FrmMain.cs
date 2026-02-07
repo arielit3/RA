@@ -1,4 +1,5 @@
-﻿using RepromosRA.Models;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using RepromosRA.Models;
 using RepromosRA.Repositories;
 using RepromosRA.Services;
 using System;
@@ -21,11 +22,6 @@ namespace RepromosRA
         {
             InitializeComponent();
             _user = user;
-        }
-
-        public FrmMain()
-        {
-            InitializeComponent();
         }
 
         private void btnCerrarSesión_Click(object sender, EventArgs e)

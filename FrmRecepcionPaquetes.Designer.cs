@@ -45,6 +45,8 @@
             btnRegisterUser = new Button();
             label6 = new Label();
             btnRegresar = new Button();
+            btnAdministrarClientes = new Button();
+            btnAdministrarProveedores = new Button();
             ((System.ComponentModel.ISupportInitialize)pBxLogo).BeginInit();
             SuspendLayout();
             // 
@@ -193,11 +195,12 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("SimSun", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(255, 133);
+            label6.Location = new Point(246, 116);
             label6.Name = "label6";
             label6.Size = new Size(218, 18);
             label6.TabIndex = 23;
             label6.Text = "Recepción de Paquetes";
+            label6.Click += label6_Click;
             // 
             // btnRegresar
             // 
@@ -209,11 +212,37 @@
             btnRegresar.UseVisualStyleBackColor = true;
             btnRegresar.Click += btnRegresar_Click;
             // 
+            // btnAdministrarClientes
+            // 
+            btnAdministrarClientes.BackColor = Color.FromArgb(128, 128, 255);
+            btnAdministrarClientes.Font = new Font("Showcard Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnAdministrarClientes.Location = new Point(120, 480);
+            btnAdministrarClientes.Name = "btnAdministrarClientes";
+            btnAdministrarClientes.Size = new Size(125, 50);
+            btnAdministrarClientes.TabIndex = 25;
+            btnAdministrarClientes.Text = "Administrar Clientes";
+            btnAdministrarClientes.UseVisualStyleBackColor = false;
+            btnAdministrarClientes.Click += btnAdministrarClientes_Click;
+            // 
+            // btnAdministrarProveedores
+            // 
+            btnAdministrarProveedores.BackColor = Color.FromArgb(128, 128, 255);
+            btnAdministrarProveedores.Font = new Font("Showcard Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnAdministrarProveedores.Location = new Point(278, 480);
+            btnAdministrarProveedores.Name = "btnAdministrarProveedores";
+            btnAdministrarProveedores.Size = new Size(125, 50);
+            btnAdministrarProveedores.TabIndex = 26;
+            btnAdministrarProveedores.Text = "Administrar Proveedores";
+            btnAdministrarProveedores.UseVisualStyleBackColor = false;
+            btnAdministrarProveedores.Click += btnAdministrarProveedores_Click;
+            // 
             // FrmRecepcionPaquetes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 542);
+            Controls.Add(btnAdministrarProveedores);
+            Controls.Add(btnAdministrarClientes);
             Controls.Add(btnRegresar);
             Controls.Add(label6);
             Controls.Add(btnRegisterUser);
@@ -258,5 +287,7 @@
         private Button btnRegisterUser;
         private Label label6;
         private Button btnRegresar;
+        private Button btnAdministrarClientes;
+        private Button btnAdministrarProveedores;
     }
 }
