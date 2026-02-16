@@ -53,11 +53,12 @@
             // dgvClientes
             // 
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(174, 145);
+            dgvClientes.Location = new Point(81, 143);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.RowHeadersWidth = 51;
-            dgvClientes.Size = new Size(339, 217);
+            dgvClientes.Size = new Size(603, 217);
             dgvClientes.TabIndex = 0;
+            dgvClientes.CellClick += dgvClientes_CellClick;
             dgvClientes.CellContentClick += dgvClientes_CellContentClick;
             // 
             // txtNombre
@@ -66,6 +67,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(125, 27);
             txtNombre.TabIndex = 1;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // txtTelefono
             // 
@@ -73,6 +75,7 @@
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(125, 27);
             txtTelefono.TabIndex = 2;
+            txtTelefono.TextChanged += txtTelefono_TextChanged;
             // 
             // txtEmail
             // 
@@ -88,6 +91,7 @@
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(125, 27);
             txtDireccion.TabIndex = 4;
+            txtDireccion.TextChanged += txtDireccion_TextChanged;
             // 
             // pBxLogo
             // 
@@ -174,27 +178,27 @@
             btnGuardar.TabIndex = 35;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click_1;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(537, 172);
+            btnEliminar.Location = new Point(752, 185);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(94, 29);
             btnEliminar.TabIndex = 36;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click_1;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(537, 225);
+            btnNuevo.Location = new Point(752, 238);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(94, 29);
             btnNuevo.TabIndex = 37;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click_1;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // label6
             // 

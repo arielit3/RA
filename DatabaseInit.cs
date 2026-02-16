@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.Data.Sqlite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RepromosRA.Data;
 
 namespace RepromosRA
@@ -43,6 +39,7 @@ namespace RepromosRA
                 Nombre TEXT NOT NULL,
                 Telefono TEXT,
                 Email TEXT,
+                Direccion TEXT,              -- ✅ agregado para nuevas instalaciones
                 Activo INTEGER NOT NULL DEFAULT 1
             );
 
@@ -68,6 +65,36 @@ namespace RepromosRA
 
             using var cmd = new SqliteCommand(sql, conn);
             cmd.ExecuteNonQuery();
+
+            // ✅ Migraciones para DB ya creada antes (ALTER TABLE)
+            ApplyMigrations(conn);
+        }
+
+        private static void ApplyMigrations(SqliteConnection conn)
+        {
+            // ✅ Este es tu error actual:
+            AddColumnIfNotExists(conn, "Proveedores", "Direccion", "TEXT");
+
+            // Recomendadas (por si en algún punto las usas en repos)
+            AddColumnIfNotExists(conn, "Clientes", "Direccion", "TEXT");
+            AddColumnIfNotExists(conn, "Clientes", "Activo", "INTEGER NOT NULL DEFAULT 1");
+            AddColumnIfNotExists(conn, "Proveedores", "Activo", "INTEGER NOT NULL DEFAULT 1");
+        }
+
+        private static void AddColumnIfNotExists(SqliteConnection conn, string table, string column, string definition)
+        {
+            using var cmd = new SqliteCommand($"PRAGMA table_info({table});", conn);
+            using var r = cmd.ExecuteReader();
+
+            while (r.Read())
+            {
+                var colName = r.GetString(1);
+                if (string.Equals(colName, column, StringComparison.OrdinalIgnoreCase))
+                    return; // ✅ ya existe
+            }
+
+            using var alter = new SqliteCommand($"ALTER TABLE {table} ADD COLUMN {column} {definition};", conn);
+            alter.ExecuteNonQuery();
         }
     }
 }

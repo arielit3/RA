@@ -21,6 +21,13 @@ namespace RepromosRA
         private void FrmClientes_Load(object sender, EventArgs e)
         {
             labelByUser.Text = Session.CurrentUser?.FullName ?? "";
+
+            // UI
+            dgvClientes.ReadOnly = true;
+            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvClientes.MultiSelect = false;
+            dgvClientes.AutoGenerateColumns = true;
+
             CargarGrid();
         }
 
@@ -42,14 +49,17 @@ namespace RepromosRA
             txtEmail.Text = c.Email;
             txtDireccion.Text = c.Direccion;
         }
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    MessageBox.Show("El nombre es obligatorio.");
+                    return;
+                }
+
                 var c = new Cliente
                 {
                     Id = _clienteId,
@@ -75,7 +85,11 @@ namespace RepromosRA
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (_clienteId == 0) return;
+            if (_clienteId == 0)
+            {
+                MessageBox.Show("Selecciona un cliente del listado.");
+                return;
+            }
 
             if (MessageBox.Show("¿Desactivar cliente?", "Confirmar",
                 MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -100,32 +114,21 @@ namespace RepromosRA
             txtDireccion.Clear();
         }
 
-
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Reutilizamos la misma lógica de selección
             dgvClientes_CellClick(sender, e);
         }
 
-        private void btnNuevo_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEliminar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGuardar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-    }
 
+        // Handlers que el designer tiene conectados (los dejamos aunque no hagan nada)
+        private void txtEmail_TextChanged(object sender, EventArgs e) { }
+        private void txtNombre_TextChanged(object sender, EventArgs e) { }
+        private void txtTelefono_TextChanged(object sender, EventArgs e) { }
+        private void txtDireccion_TextChanged(object sender, EventArgs e) { }
+    }
 }

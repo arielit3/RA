@@ -52,7 +52,7 @@
             // 
             // btnRegresar
             // 
-            btnRegresar.Location = new Point(694, 409);
+            btnRegresar.Location = new Point(694, 431);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(94, 29);
             btnRegresar.TabIndex = 25;
@@ -115,10 +115,10 @@
             // dgvProveedores
             // 
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProveedores.Location = new Point(112, 131);
+            dgvProveedores.Location = new Point(40, 131);
             dgvProveedores.Name = "dgvProveedores";
             dgvProveedores.RowHeadersWidth = 51;
-            dgvProveedores.Size = new Size(300, 188);
+            dgvProveedores.Size = new Size(584, 188);
             dgvProveedores.TabIndex = 44;
             dgvProveedores.CellClick += dgvProveedores_CellClick;
             // 
@@ -202,7 +202,7 @@
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(440, 211);
+            btnNuevo.Location = new Point(671, 222);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(94, 29);
             btnNuevo.TabIndex = 55;
@@ -212,7 +212,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(440, 158);
+            btnEliminar.Location = new Point(671, 169);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(94, 29);
             btnEliminar.TabIndex = 54;
@@ -224,7 +224,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 472);
             Controls.Add(btnNuevo);
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);

@@ -57,7 +57,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("SimSun", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(258, 114);
+            label6.Location = new Point(502, 121);
             label6.Name = "label6";
             label6.Size = new Size(178, 18);
             label6.TabIndex = 28;
@@ -67,7 +67,7 @@
             // 
             labelByUser.AutoSize = true;
             labelByUser.Font = new Font("SimSun", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelByUser.Location = new Point(409, 54);
+            labelByUser.Location = new Point(653, 54);
             labelByUser.Name = "labelByUser";
             labelByUser.Size = new Size(27, 28);
             labelByUser.TabIndex = 27;
@@ -78,7 +78,7 @@
             // 
             labelWelcome.AutoSize = true;
             labelWelcome.Font = new Font("SimSun", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelWelcome.Location = new Point(286, 54);
+            labelWelcome.Location = new Point(530, 54);
             labelWelcome.Name = "labelWelcome";
             labelWelcome.Size = new Size(117, 28);
             labelWelcome.TabIndex = 26;
@@ -88,7 +88,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("SimSun", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(210, 12);
+            label1.Location = new Point(454, 12);
             label1.Name = "label1";
             label1.Size = new Size(342, 28);
             label1.TabIndex = 25;
@@ -98,7 +98,7 @@
             // 
             pBxLogo.BackgroundImageLayout = ImageLayout.Center;
             pBxLogo.Image = Properties.Resources.Uni_logo;
-            pBxLogo.Location = new Point(608, 12);
+            pBxLogo.Location = new Point(931, 12);
             pBxLogo.Name = "pBxLogo";
             pBxLogo.Size = new Size(180, 81);
             pBxLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -125,7 +125,7 @@
             // 
             btnBuscar.BackColor = Color.Chartreuse;
             btnBuscar.Font = new Font("Showcard Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnBuscar.Location = new Point(122, 491);
+            btnBuscar.Location = new Point(409, 467);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(125, 50);
             btnBuscar.TabIndex = 31;
@@ -137,7 +137,7 @@
             // 
             btnRegistrarEnvio.BackColor = Color.Chartreuse;
             btnRegistrarEnvio.Font = new Font("Showcard Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnRegistrarEnvio.Location = new Point(384, 491);
+            btnRegistrarEnvio.Location = new Point(671, 467);
             btnRegistrarEnvio.Name = "btnRegistrarEnvio";
             btnRegistrarEnvio.Size = new Size(125, 50);
             btnRegistrarEnvio.TabIndex = 32;
@@ -149,7 +149,7 @@
             // 
             btnMarcarEntregado.BackColor = Color.Chartreuse;
             btnMarcarEntregado.Font = new Font("Showcard Gothic", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnMarcarEntregado.Location = new Point(253, 491);
+            btnMarcarEntregado.Location = new Point(540, 467);
             btnMarcarEntregado.Name = "btnMarcarEntregado";
             btnMarcarEntregado.Size = new Size(125, 50);
             btnMarcarEntregado.TabIndex = 33;
@@ -159,7 +159,7 @@
             // 
             // btnRegresar
             // 
-            btnRegresar.Location = new Point(694, 512);
+            btnRegresar.Location = new Point(1017, 512);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(94, 29);
             btnRegresar.TabIndex = 34;
@@ -247,16 +247,16 @@
             // dgvPaquetes
             // 
             dgvPaquetes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPaquetes.Location = new Point(384, 151);
+            dgvPaquetes.Location = new Point(570, 174);
             dgvPaquetes.Name = "dgvPaquetes";
             dgvPaquetes.RowHeadersWidth = 51;
-            dgvPaquetes.Size = new Size(404, 217);
+            dgvPaquetes.Size = new Size(541, 217);
             dgvPaquetes.TabIndex = 43;
             dgvPaquetes.CellContentClick += dgvPaquetes_CellContentClick;
             // 
             // btnRefrescarDataGridView
             // 
-            btnRefrescarDataGridView.Location = new Point(552, 388);
+            btnRefrescarDataGridView.Location = new Point(836, 397);
             btnRefrescarDataGridView.Name = "btnRefrescarDataGridView";
             btnRefrescarDataGridView.Size = new Size(94, 29);
             btnRefrescarDataGridView.TabIndex = 44;
@@ -268,7 +268,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 553);
+            ClientSize = new Size(1123, 553);
             Controls.Add(btnRefrescarDataGridView);
             Controls.Add(dgvPaquetes);
             Controls.Add(lblFechas);
